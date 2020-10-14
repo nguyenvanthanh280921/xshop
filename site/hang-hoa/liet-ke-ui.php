@@ -11,9 +11,6 @@
                     </a>
                     <a href=""><?=$ten_hh?></a>
                     <h5 class="card-title">$<?=number_format($don_gia, 2)?></h5>
-                    <!--                    <h5 class="card-title">--><?php // echo $item['ten_hh']; ?><!--</h5>-->
-<!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--                    <p class="bloc_left_price">99.00 $</p>-->
                 </div>
             </div>
         </div>

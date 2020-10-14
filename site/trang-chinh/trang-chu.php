@@ -9,8 +9,8 @@
                     <img style="width: 285px ; height: 225px" class="img-fluid" src="<?=$CONTENT_URL?>/images/products/<?=$item['hinh']?>" />
                     </a>
                     <h5 class="card-title"><?php  echo $item['ten_hh']; ?></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <p class="bloc_left_price">99.00 $</p>
+                    <p class="card-text">Quality</p>
+                    <button type="button" class="btn btn-primary">Mua Hàng</button>
                 </div>
             </div>
         </div>

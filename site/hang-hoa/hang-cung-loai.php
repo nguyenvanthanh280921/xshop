@@ -8,7 +8,10 @@
             <?php
             $hh_cung_loai = hang_hoa_select_by_loai($ma_loai);
             foreach ($hh_cung_loai as $hh) {
-                echo "<li><a href='chi-tiet.php?ma_hh=$hh[ma_hh]'>$hh[ten_hh]</a></li>";
+                echo "
+                   <br><br>   <img width='90px' height='73px'  src='$CONTENT_URL/images/products/$hh[hinh]'>
+                    <a href='chi-tiet.php?ma_hh=$hh[ma_hh]'>$hh[ten_hh]</a>";
+
             }
             ?>
         </ul>
@@ -16,4 +19,3 @@
 </div>
 </body>
 </html>
-

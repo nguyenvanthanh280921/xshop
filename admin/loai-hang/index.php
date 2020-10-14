@@ -6,17 +6,29 @@ require "../../dao/loai.php";
 
 //check_login();
 extract($_REQUEST);
-if(exist_param("btn_insert")){
-    try {
-        loai_insert($ten_loai);
-        unset($ten_loai, $ma_loai);
-        $MESSAGE = "Thêm mới thành công!";
-        header('location: index.php?btn_list');
+if(exist_param("btn_insert")) {
+    //kiểm tra hợp lệ
+    $err = []; //mạng lưu các thông tin báo lỗi
+    if (strlen($ten_loai) < 5)
+        $err[] = "Tên loại cần nhập ít nhất 5 ký tự ";
+
+    if (strlen($ten_loai) > 50)
+        $err[] = "Tên loại nhập nhiều nhất là 50 ký tự ";
+
+    if (!empty($err)) {
+        $MESSAGE = implode("<br>", $err); // nhập mạng lỗi thành chuỗi
+    } else // không có lỗi thì thực hiện câu lệnh try.
+        {
+        try {
+            loai_insert($ten_loai);
+            unset($ten_loai, $ma_loai);
+            $MESSAGE = "Thêm mới thành công!";
+            header('location: index.php?btn_list');
+        } catch (Exception $exc) {
+            $MESSAGE = "Thêm mới thất bại!" . $exc->getMessage();
+        }
+        $VIEW_NAME = "loai-hang/new.php";
     }
-    catch (Exception $exc) {
-        $MESSAGE = "Thêm mới thất bại!".$exc ->getMessage();
-    }
-    $VIEW_NAME = "loai-hang/new.php";
 }
 else if(exist_param("btn_update")){
     try {

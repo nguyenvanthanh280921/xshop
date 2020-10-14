@@ -22,8 +22,8 @@
                 <button name="btn_login">Đăng nhập</button>
             </div>
             <div>
-                <li><a href="<?= $SITE_URL ?>/tai-khoan/quen-mk.php">Quên mật khẩu</a></li>
-                <li><a href="<?= $SITE_URL ?>/tai-khoan/dang-ky.php">Đăng ký thành viên</a></li>
+                <a href="<?= $SITE_URL ?>/tai-khoan/quen-mk.php">Quên mật khẩu</a><br>
+                <a href="<?= $SITE_URL ?>/tai-khoan/dang-ky.php">Đăng ký thành viên</a>
             </div>
         </form>
     </div>

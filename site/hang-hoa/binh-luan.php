@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <div class="panel panel-default list-group">
     <div class="panel-heading list-group-item disabled">BÌNH LUẬN</div>
     <div class="panel-body list-group-item">
@@ -39,6 +35,3 @@
         <?php }?>
     </div>
 </div>
-</body>
-</html>
-
