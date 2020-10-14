@@ -24,8 +24,10 @@ $MESSAGE = '';
  * @param string $fieldname là tên tham số cần kiểm tra
  * @return boolean true tồn tại
  */
-function exist_param($fieldname){
-    return array_key_exists($fieldname, $_REQUEST);
+if(!function_exists('exist_param')){
+    function exist_param($fieldname){
+        return array_key_exists($fieldname, $_REQUEST);
+    }
 }
 /**
  * Lưu file upload vào thư mục
