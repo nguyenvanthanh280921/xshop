@@ -17,6 +17,7 @@ if(exist_param("btn_insert")) {
 
     if (!empty($err)) {
         $MESSAGE = implode("<br>", $err); // nhập mạng lỗi thành chuỗi
+        $VIEW_NAME = "loai-hang/new.php";
     } else // không có lỗi thì thực hiện câu lệnh try.
         {
         try {
@@ -27,7 +28,7 @@ if(exist_param("btn_insert")) {
         } catch (Exception $exc) {
             $MESSAGE = "Thêm mới thất bại!" . $exc->getMessage();
         }
-        $VIEW_NAME = "loai-hang/new.php";
+
     }
 }
 else if(exist_param("btn_update")){

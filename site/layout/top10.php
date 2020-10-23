@@ -1,4 +1,3 @@
-
 <div class="list-group mt-20">
     <div class="list-group-item active">TOP 10 YÊU THÍCH</div>
     <div class="list-group-item">
@@ -9,7 +8,7 @@
             $href = "$SITE_URL/hang-hoa/chi-tiet.php?ma_hh=$hh[ma_hh]";
             echo "
                             <div>
-                                <div><img width='100%' height='100'  src='$CONTENT_URL/images/products/$hh[hinh]'></div>
+                                <div><img width='100px' height='100px'  src='$CONTENT_URL/images/products/$hh[hinh]'></div>
                                 <div><a href='$href'>$hh[ten_hh]</a></div>
                             </div>
                         ";

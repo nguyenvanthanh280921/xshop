@@ -7,6 +7,7 @@ Require_once 'pdo.php';
  * @throws PDOException lỗi thêm mới
  */
 function loai_insert($ten_loai){
+
     $sql = "INSERT INTO loai(ten_loai) VALUES(?)";
     pdo_execute($sql, $ten_loai);
 

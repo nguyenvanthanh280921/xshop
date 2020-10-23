@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
 <h3>CẬP NHẬT TÀI KHOẢN</h3>
 <?php
 if(strlen($MESSAGE)){
@@ -41,6 +38,4 @@ if(strlen($MESSAGE)){
         </div>
     </div>
 </form>
-</body>
-</html>
 

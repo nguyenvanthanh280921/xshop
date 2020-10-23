@@ -9,17 +9,22 @@ require "../../dao/loai.php";
 
 extract($_REQUEST);
 
-if(exist_param("btn_insert")){
+$regex_ngay_nhap = '/^(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-[0-9]{4}$/';
+
+if (exist_param("btn_insert")) {
     $up_hinh = save_file("hinh", "$IMAGE_DIR/products/");
     $hinh = strlen($up_hinh) > 0 ? $up_hinh : 'product.png';
-    try {
-        hang_hoa_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta);
-        unset($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta);
-        $MESSAGE = "Thêm mới thành công!";
-        header('location: index.php?btn_list');
+    if (!preg_match($regex_ngay_nhap, $ngay_nhap)) {
+        $ngay_nhap_error = "Ngày tháng nhập không hợp lệ!!!!";
     }
-    catch (Exception $exc) {
-        $MESSAGE = "Thêm mới thất bại!";
+    if (!isset($ngay_nhap_error)) {
+        try {
+            hang_hoa_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta);
+            unset($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta);
+            $MESSAGE = "Thêm mới thành công!";
+        } catch (Exception $exc) {
+            $MESSAGE = "Thêm mới thất bại!" . $exc->getMessage();
+        }
     }
     $VIEW_NAME = "hang-hoa/new.php";
 }
@@ -68,4 +73,8 @@ if($VIEW_NAME == "hang-hoa/new.php" || $VIEW_NAME == "hang-hoa/edit.php"){
 }
 
 require "../layout.php";
+
+
+
+
 

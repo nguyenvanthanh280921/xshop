@@ -2,7 +2,7 @@
     <div>TÀI KHOẢN</div>
     <div>
         <div>
-            <img width="100%" height="350" src='<?= $CONTENT_URL ?>/images/users/<?= $_SESSION['user']['hinh'] ?>'>
+            <img width="100%" height="300" src='<?= $CONTENT_URL ?>/images/users/<?= $_SESSION['user']['hinh'] ?>'>
             <br>
             <?= $_SESSION['user']['ho_ten'] ?>
         </div>

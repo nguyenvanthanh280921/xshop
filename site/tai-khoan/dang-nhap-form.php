@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h3>ĐĂNG NHẬP</h3>
+
+<h3>ĐĂNG NHẬP</h3>
         <?php
         if(strlen($MESSAGE)){
             echo "<h5>$MESSAGE</h5>";
@@ -26,6 +24,4 @@
                 <button class="btn btn-primary" name="btn_login">Đăng nhập</button>
             </div>
         </form>
-    </body>
-</html>
 

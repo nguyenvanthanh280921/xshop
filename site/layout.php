@@ -16,6 +16,12 @@
         nav {
             padding-top: 20px;
         }
+        .col-12{
+            padding-top: 10px;
+        }
+        footer{
+            background-color: #80deea;
+        }
     </style>
     <body>
         <div class="container">
@@ -36,7 +42,7 @@
                     <!--FAVORITE-->
                     <?php require 'layout/top10.php'; ?>
                 </div>
-
+                <div class="col-12">
                     <!-------------------- Footer ------------------------->
                     <footer class="page-footer font-small unique-color-dark">
 
@@ -48,7 +54,7 @@
 
                                     <!-- Grid column -->
                                     <section class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                                        <h6  class="mb-0">Get connected with us on social networks!</h6>
                                     </section>
                                     <!-- Grid column -->
 
@@ -95,13 +101,9 @@
                                 <section class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
                                     <!-- Content -->
-                                    <h6 class="text-uppercase font-weight-bold">Men's Fashion37</h6>
+                                    <h6 class="text-uppercase font-weight-bold">Men's Shop37</h6>
                                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                                    <p>This shop is rated by customers as a shop selling office shirts with good quality
-                                        fabrics, full
-                                        size
-                                        sizes.
-                                        Very suitable for all audiences and meet the needs of each customer.</p>
+                                    <p>This shop is rated by customers as a leading electronic shop. Very suitable for all subjects and meet the needs of each customer.</p>
 
                                 </section>
                                 <!-- Grid column -->
@@ -113,16 +115,19 @@
                                     <h6 class="text-uppercase font-weight-bold">Products</h6>
                                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                                     <p>
-                                        <a href="#!">Office fashion</a>
+                                        <a href="#!">Iphone</a>
                                     </p>
                                     <p>
-                                        <a href="#!">Four-season fashion</a>
+                                        <a href="#!">SamSung</a>
                                     </p>
                                     <p>
-                                        <a href="#!">Summer fashion</a>
+                                        <a href="#!">LapTop</a>
                                     </p>
                                     <p>
-                                        <a href="#!">Fashion style outing</a>
+                                        <a href="#!">Ipad</a>
+                                    </p>
+                                    <p>
+                                        <a href="#!">Đồng Hồ</a>
                                     </p>
 
                                 </section>
@@ -158,7 +163,7 @@
                                     <p>
                                         <i class="fas fa-home mr-3"></i> New York, 888888, US</p>
                                     <p>
-                                        <i class="fas fa-envelope mr-3"></i> Men's Fashion37@gmail.com</p>
+                                        <i class="fas fa-envelope mr-3"></i> Men's Shop37@gmail.com</p>
                                     <p>
                                         <i class="fas fa-phone mr-3"></i> + 06 66 666 666</p>
                                     <p>
@@ -169,9 +174,10 @@
                             <!-- Grid row -->
                         </section>
                     </footer>
-                <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-                <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-                <script type="text/javascript" src="./js/mdb.min.js"></script>
+                    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+                    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="./js/mdb.min.js"></script>
+                </div>
             </div>
         </div>
     </body>

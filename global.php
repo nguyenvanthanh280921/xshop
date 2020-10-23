@@ -35,16 +35,18 @@ if(!function_exists('exist_param')){
  * @param string $target_dir thư mục lưu file
  * @return tên file upload
  */
-function save_file($fieldname, $target_dir){
-    if(!file_exists($target_dir))
-        mkdir($target_dir,0777,1);
+if(!function_exists('save_file')){
+    function save_file($fieldname, $target_dir){
+        if(!file_exists($target_dir))
+            mkdir($target_dir,0777,1);
 
-    $file_uploaded = $_FILES[$fieldname];
-    $file_name = basename($file_uploaded["name"]);
-    $target_path = $target_dir . $file_name;
-    move_uploaded_file($file_uploaded["tmp_name"], $target_path);
-    return $file_name;
+        $file_uploaded = $_FILES[$fieldname];
+        $file_name = basename($file_uploaded["name"]);
+        $target_path = $target_dir . $file_name;
+        move_uploaded_file($file_uploaded["tmp_name"], $target_path);
+        return $file_name;
 
+    }
 }
 /**
  * Tạo cookie
@@ -52,48 +54,58 @@ function save_file($fieldname, $target_dir){
  * @param string $value là giá trị cookie
  * @param int $day là số ngày tồn tại cookie
  */
-function add_cookie($name, $value, $day){
-    setcookie($name, $value, time() + (86400 * $day), "/");
+if(!function_exists('add_cookie')){
+    function add_cookie($name, $value, $day){
+        setcookie($name, $value, time() + (86400 * $day), "/");
+    }
 }
 /**
  * Xóa cookie
  * @param string $name là tên cookie
  */
-function delete_cookie($name){
-    add_cookie($name, “, -1);
+if(!function_exists('delete_cookie')){
+    function delete_cookie($name){
+        add_cookie($name, “, -1);
+    }
 }
 /**
  * Đọc giá trị cookie
  * @param string $name là tên cookie
  * @return string giá trị của cookie
  */
-function get_cookie($name){
-    return $_COOKIE[$name]??'';
+if(!function_exists('get_cookie')){
+    function get_cookie($name){
+        return $_COOKIE[$name]??'';
+    }
 }
 /**
  * Kiểm tra đăng nhập và vai trò sử dụng.
  * Các php trong admin hoặc php yêu cầu phải được đăng nhập mới được
  * phép sử dụng thì cần thiết phải gọi hàm này trước
  **/
-function check_login(){
-    global $SITE_URL;
-    if(isset($_SESSION['user'])){
-        if($_SESSION['user']['vai_tro'] == 1){
-            return;
+if(!function_exists('check_login')){
+    function check_login(){
+        global $SITE_URL;
+        if(isset($_SESSION['user'])){
+            if($_SESSION['user']['vai_tro'] == 1){
+                return;
+            }
+            if(strpos($_SERVER["REQUEST_URI"], '/admin/') == FALSE){
+                return;
+            }
         }
-        if(strpos($_SERVER["REQUEST_URI"], '/admin/') == FALSE){
-            return;
-        }
+        $_SESSION['request_uri'] = $_SERVER["REQUEST_URI"];
+        header("location: $SITE_URL/tai-khoan/dang-nhap.php");
     }
-    $_SESSION['request_uri'] = $_SERVER["REQUEST_URI"];
-    header("location: $SITE_URL/tai-khoan/dang-nhap.php");
 }
 
-function get_base_url(){
-    $server_name = $_SERVER['SERVER_NAME'];
-    $request_uri = explode('/',$_SERVER['REQUEST_URI']);
-    array_shift($request_uri);
-    $root_folder = $request_uri[0];
-    return "http://$server_name/$root_folder";
+if(!function_exists('get_base_url')){
+    function get_base_url(){
+        $server_name = $_SERVER['SERVER_NAME'];
+        $request_uri = explode('/',$_SERVER['REQUEST_URI']);
+        array_shift($request_uri);
+        $root_folder = $request_uri[0];
+        return "http://$server_name/$root_folder";
+    }
 }
 // Hàm dành cho khách hàng

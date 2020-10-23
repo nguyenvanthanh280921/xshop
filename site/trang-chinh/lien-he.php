@@ -1,36 +1,33 @@
+
+<head>
+    <link rel="stylesheet" href="../../content/css/bootstrap.min.css">
+</head>
+
+<h3>LIÊN HỆ</h3>
 <?php
-
-//1. Key dưới đây chỉ dùng tạm, khi chạy dịch vụ chính thức bạn cần đăng ký tài khoản của sendgrid.com
-// website nhỏ thì dùng tài khoản miễn phí ok
-// tham khảo cách đăng ký để lấy key https://saophaixoan.net/search-tut?q=sendgrid
-// trong code này chỉ cần lấy key là ok, sau khi gửi thử xong thì verify là ok.
-$SENDGRID_API_KEY = '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';
-
-require 'vendor/autoload.php';
-$email = new \SendGrid\Mail\Mail();
-///------- bạn chỉnh sửa các thông tin dưới đây cho phù hợp với mục đích cá nhân
-// Thông tin người gửi
-$email->setFrom("sonmobi@gmail.com", "MRS");
-// Tiêu đề thư
-$email->setSubject("Sending with SendGrid is Fun");
-// Thông tin người nhận
-$email->addTo("sondt32@fpt.edu.vn", "SonDT32");
-// Soạn nội dung cho thư
-// $email->addContent("text/plain", "Nội dung text thuần không có thẻ html");
-$email->addContent(
-    "text/html", "<h2>Nội dung có sử dụng thẻ html</h2>"
-);
-
-// tiến hành gửi thư
-$sendgrid = new \SendGrid($SENDGRID_API_KEY);
-try {
-    $response = $sendgrid->send($email);
-
-    //--- mấy dòng print này thích in ra thì in.
-    print $response->statusCode() . "\n";
-    print_r($response->headers());
-    print $response->body() . "\n";
-
-} catch (Exception $e) {
-    echo 'Caught exception: ' . $e->getMessage() . "\n";
+if(strlen($MESSAGE)){
+    echo "<h5>$MESSAGE</h5>";
 }
+?>
+<form action="dang-ky.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Họ và tên </label>
+        <input type="text" name="ho_ten"  class="form-control" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Địa chỉ email</label>
+        <input type="text" name="email"  class="form-control" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Số Điện Thoại</label>
+        <input type="text" name="sdt"  class="form-control" >
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1"> Hình</label>
+        <input type="file" name="up_hinh" class="form-control" >
+    </div>
+    <!--Giá trị mặc định-->
+    <input name="vai_tro" value="0" type="hidden">
+    <input name="kich_hoat" value="0" type="hidden">
+</form>
+

@@ -56,6 +56,11 @@ if (strlen($MESSAGE)) {
         <div class="form-group col-md-4">
             <label for="inputPassword4">NGÀY NHẬP</label>
             <input type="text" name="ngay_nhap" class="form-control">
+            <?php if (!empty($ngay_nhap_error)) : ?>
+                <div class="alert alert-danger text-center mt-3" role="alert">
+                    <?= $ngay_nhap_error ?>
+                </div>
+            <?php endif ?>
         </div>
         <div class="form-group col-md-4">
             <label for="inputPassword4">SỐ LƯỢC XEM</label>

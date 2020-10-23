@@ -1,28 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <div class="box mt-20">
-            <div class="thumbnail card mb-3">
-                <img   src='<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>' style="max-width: 100%" height="400px">
-                <div class="caption">
-                    <p>
-                        <ul>
-                            <li>MÃ HÀNG HÓA: <?=$ma_hh?></li>
-                            <li>TÊN HÀNG HÓA: <?=$ten_hh?></li>
-                            <li>ĐƠN GIÁ: <?=number_format($don_gia, 2)?></li>
-                            <li>GIẢM GIÁ: <?=$giam_gia * 100 ?>%</li>
-                        </ul>
-                    </p>
-                    <div><?= $mo_ta ?></div>
-                </div>
+
+<div class="box mt-20">
+    <div class="thumbnail card mb-3">
+        <div class="row  col-12 col-md-12">
+            <div class="cls-img col-7 col-md-7 col-sm-7" >
+                <img style="width: 100%;height: auto"  src='<?= $CONTENT_URL ?>/images/products/<?= $hinh ?>' />
             </div>
-
-            <?php require 'binh-luan.php';?>
-
-            <?php require 'hang-cung-loai.php';?>
+            <div class="cls-info col-5 col-md-5" style="padding-top: 20%;">
+                <ul>
+                    <li>MÃ HÀNG HÓA: <?=$ma_hh?></li>
+                    <li>TÊN HÀNG HÓA: <?=$ten_hh?></li>
+                    <li>ĐƠN GIÁ: <?=number_format($don_gia, 2)?></li>
+                    <li>GIẢM GIÁ: <?=$giam_gia * 100 ?>%</li>
+                </ul>
+            </div>
         </div>
-    </body>
-</html>
+        <div class="row caption col-12">
+            <div class="col-12"><?= $mo_ta ?></div>
+        </div>
+    </div>
+    <?php require 'binh-luan.php';?>
+    <?php require 'hang-cung-loai.php';?>
+</div>
 
 <!--<div class="card mb-3">-->
 <!--    <img src="..." alt="Card image cap">-->

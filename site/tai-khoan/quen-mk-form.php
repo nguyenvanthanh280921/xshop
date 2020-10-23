@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
 <h3>QUÊN MẬT KHẨU</h3>
 <?php
 if(strlen($MESSAGE)){
@@ -21,5 +18,4 @@ if(strlen($MESSAGE)){
         <button class="btn-primary" name="btn_forgot">Tìm lại mật khẩu</button>
     </div>
 </form>
-</body>
-</html>
+

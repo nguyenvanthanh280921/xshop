@@ -7,6 +7,7 @@ check_login();
 extract($_REQUEST);
 
 if(exist_param("btn_change")){
+
     if($mat_khau2 != $mat_khau3){
         $MESSAGE = "Xác nhận mật khẩu mới không đúng!";
     }

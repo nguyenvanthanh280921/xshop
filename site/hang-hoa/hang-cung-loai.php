@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<body>
+
 <div class="panel panel-default list-group mt-20">
     <div class="panel-heading list-group-item active"">HÀNG CÙNG LOẠI</div>
     <div class="panel-body list-group-item">
@@ -17,5 +15,3 @@
         </ul>
     </div>
 </div>
-</body>
-</html>
