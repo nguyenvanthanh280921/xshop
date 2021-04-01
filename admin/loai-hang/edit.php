@@ -17,6 +17,13 @@ if(strlen($MESSAGE)){
         <label>Tên loại</label>
         <input name="ten_loai" value="<?php echo $ten_loai; ?>">
     </div>
+    <div >
+        <label > Trạng Thái </label>
+        <input type="radio" name="trang_thai" value="0" <?php if ($trang_thai == 0) echo'checked'?>>
+        <label for="age1">Ẩn</label>
+        <input type="radio" name="trang_thai" value="1" <?php if ($trang_thai == 1) echo'checked'?>>
+        <label for="age1">Hiện Thị</label>
+    </div>
     <div>
         <button class="btn btn-primary" name="btn_update">Cập nhật</button>
         <button class="btn btn-success" type="reset">Nhập lại</button>

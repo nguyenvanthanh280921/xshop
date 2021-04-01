@@ -16,6 +16,13 @@
                 <label for="exampleInputPassword1"> Tên Loại </label>
                 <input type="text" name="ten_loai" class="form-control">
             </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1"> Trạng Thái </label>
+                <input type="radio" name="trang_thai" value="0" checked>
+                <label for="age1">Ẩn</label>
+                <input type="radio" name="trang_thai" value="1">
+                <label for="age1">Hiện Thị</label>
+            </div>
             <div>
                 <button class="btn btn-primary" name="btn_insert">Thêm mới</button>
                 <button class="btn btn-success" type="reset">Nhập lại</button>

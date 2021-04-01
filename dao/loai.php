@@ -6,10 +6,10 @@ Require_once 'pdo.php';
  * @param String $ten_loai là tên loại
  * @throws PDOException lỗi thêm mới
  */
-function loai_insert($ten_loai){
+function loai_insert($ten_loai, $trang_thai){
 
-    $sql = "INSERT INTO loai(ten_loai) VALUES(?)";
-    pdo_execute($sql, $ten_loai);
+    $sql = "INSERT INTO loai(ten_loai,trang_thai) VALUES(?)";
+    pdo_execute($sql, $ten_loai, $trang_thai);
 
 }
 /**
@@ -18,9 +18,9 @@ function loai_insert($ten_loai){
  * @param String $ten_loai là tên loại mới
  * @throws PDOException lỗi cập nhật
  */
-function loai_update($ma_loai, $ten_loai){
-    $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
-    pdo_execute($sql, $ten_loai, $ma_loai);
+function loai_update($ma_loai, $ten_loai,$trang_thai){
+    $sql = "UPDATE loai SET ten_loai=?,trang_thai=? WHERE ma_loai=?";
+    pdo_execute($sql, $ten_loai, $ma_loai,$trang_thai);
 
 }
 /**

@@ -18,7 +18,9 @@ if(strlen($MESSAGE)){
             <th></th>
             <th>MÃ LOẠI</th>
             <th>TÊN LOẠI</th>
+            <th>TRẠNG THÁI</th>
             <th></th>
+
         </tr>
         </thead>
         <tbody>
@@ -30,6 +32,8 @@ if(strlen($MESSAGE)){
                 <th><input type="checkbox" name="ma_loai[]" value="<?=$ma_loai?>"></th>
                 <td><?=$ma_loai?></td>
                 <td><?=$ten_loai?></td>
+                <td><? ?>
+                    }?></td>
                 <td>
                     <a class="btn btn-outline-secondary" href="index.php?btn_edit&ma_loai=<?=$ma_loai?>" >Sửa</a>
                     <a class="btn btn-outline-secondary" href="index.php?btn_delete&ma_loai=<?=$ma_loai?>" >Xóa</a>
